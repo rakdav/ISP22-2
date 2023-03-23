@@ -22,6 +22,7 @@ namespace ISP22_2
     {
         private List<int> ints = new List<int>(); 
         private List<double> doubles = new List<double>();  
+        private Queue<double> queue= new Queue<double>();
         public MainWindow()
         {
             InitializeComponent();
@@ -83,6 +84,24 @@ namespace ISP22_2
                 if (item > -15 && item < 4) count++;
             }
             txbDoubleResult.Text = count.ToString();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            double n = double.Parse(txtQueue.Text);
+            queue.Enqueue(n);
+            listQuequ.Items.Add(n);
+            txtQueue.Clear();
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            int count = 0;
+            foreach (double item in queue)
+            {
+                if (item < 0) count++;
+            }
+            txbQueue.Text = "Количество отрицательных:" + count;
         }
     }
 }

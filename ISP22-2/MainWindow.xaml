@@ -12,7 +12,8 @@
                 <TabItem Header="Базовый уровень 29">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="171*"/>
+                            <ColumnDefinition Width="26*"/>
+                            <ColumnDefinition Width="145*"/>
                             <ColumnDefinition Width="317*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
@@ -23,10 +24,10 @@
                             <RowDefinition Height="3*"/>
                         </Grid.RowDefinitions>
                         <Label Content="Введите числа через запятую"
-                               Grid.Row="0" FontSize="16" Grid.ColumnSpan="2" Margin="0,0,0,94" Grid.RowSpan="2"/>
+                               Grid.Row="0" FontSize="16" Grid.ColumnSpan="3" Margin="0,0,0,94" Grid.RowSpan="2"/>
                         <TextBox x:Name="txtMassiv" Grid.Row="1"
-                                 Margin="10,10,10,10" FontSize="16" KeyDown="txtMassiv_KeyDown" Grid.ColumnSpan="2"/>
-                        <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,94,0,0" Grid.RowSpan="2">
+                                 Margin="10,10,10,10" FontSize="16" KeyDown="txtMassiv_KeyDown" Grid.ColumnSpan="3"/>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="3" Margin="0,94,0,0" Grid.RowSpan="2">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
@@ -40,9 +41,9 @@
                                     Grid.Column="2"/>
                         </Grid>
                         <TextBlock x:Name="txbMassiv" Grid.Row="3"
-                                   Margin="10,10,10,10" Grid.ColumnSpan="2"/>
+                                   Margin="10,10,10,10" Grid.ColumnSpan="3"/>
                         <TextBlock x:Name="txbResult" Grid.Row="4"
-                                   Margin="10,10,10,10" Grid.ColumnSpan="2"/>
+                                   Margin="10,10,10,10" Grid.ColumnSpan="3"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Базовый уровень 30">
@@ -77,10 +78,48 @@
             </TabControl>
         </TabItem>
         <TabItem Header="Лабораторная работа 7">
+            <TabControl>
+                <TabItem Header="Базовый уровень 29">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <ListBox x:Name="listQuequ" Grid.Column="0"
+                                 Margin="10"/>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="8*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Введите элемент очереди"
+                                   Grid.Row="0"/>
+                            <TextBox x:Name="txtQueue" Grid.Row="1"
+                                     Margin="10 "/>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Button Content="Добавить" Grid.Column="0"
+                                        Margin="10" Click="Button_Click_4"/>
+                                <Button Content="Количество отрицательных" Grid.Column="1"
+                                        Margin="10" Click="Button_Click_5"/>
+                            </Grid>
+                            <TextBlock Margin="10" Name="txbQueue"
+                                       Grid.Row="4"/>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Базовый уровень 30">
 
+                </TabItem>
+            </TabControl>
         </TabItem>
         <TabItem Header="Лабораторная работа 8">
-
+            
         </TabItem>
     </TabControl>
 </Window>
