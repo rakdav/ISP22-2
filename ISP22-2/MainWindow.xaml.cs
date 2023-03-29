@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace ISP22_2
         private List<int> ints = new List<int>(); 
         private List<double> doubles = new List<double>();  
         private Queue<double> queue= new Queue<double>();
+        private Stack<Monitor> monitors = new Stack<Monitor>();
         public MainWindow()
         {
             InitializeComponent();
@@ -102,6 +104,33 @@ namespace ISP22_2
                 if (item < 0) count++;
             }
             txbQueue.Text = "Количество отрицательных:" + count;
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            Monitor monitor = new Monitor(nameMonitor.Text, int.Parse(diagMonitor.Text),
+               int.Parse(priceMonitor.Text));
+            monitors.Push(monitor);
+            TreeViewItem item = new TreeViewItem();
+            item.Tag = "Запись " + monitors.Count;
+            item.Header = "Запись " + monitors.Count;
+            item.Items.Add(monitor.Name);
+            item.Items.Add(monitor.Diagonal);
+            item.Items.Add(monitor.Price);
+            treeView.Items.Add(item);
+            nameMonitor.Clear();
+            diagMonitor.Clear();
+            priceMonitor.Clear();
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            int count = 0;
+            foreach(Monitor monitor in monitors)
+            {
+                if (monitor.Diagonal > 20) count++;
+            }
+            monitorResult.Text=count.ToString();
         }
     }
 }
