@@ -172,11 +172,25 @@
                         <ListBox  Grid.Column="0" Name="list8" Margin="10"/>
                         <Grid Grid.Column="1">
                             <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="8*"/>
                             </Grid.RowDefinitions>
+                            <Label Content="Введите число" Grid.Row="0"/>
+                            <TextBox x:Name="txtLab8" Grid.Row="1" Margin="10"/>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Button Content="add" Grid.Column="0"
+                                        Margin="10"/>
+                                <Button Content="add12" Grid.Column="1"
+                                        Margin="10"/>
+                            </Grid>
+                            <TextBlock Grid.Row="3" Margin="10" 
+                                       Name="txbRes8"/>
                         </Grid>
                     </Grid>
                 </TabItem>

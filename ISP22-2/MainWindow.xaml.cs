@@ -132,5 +132,10 @@ namespace ISP22_2
             }
             monitorResult.Text=count.ToString();
         }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
