@@ -88,6 +88,21 @@ namespace ISP22_2
             }
             return false;
         }
+        public int IndexOf(T data)
+        {
+            Node<T> current = head;
+            int i = 0;
+            while (current != null)
+            {
+                if (current.Data.Equals(data))
+                {
+                    return i;
+                }
+                current = current.Next;
+                i++;
+            }
+            return -1;
+        }
         // добвление в начало
         public void AppendFirst(T data)
         {
@@ -97,6 +112,31 @@ namespace ISP22_2
             if (count == 0)
                 tail = head;
             count++;
+        }
+        public void Insert(T data,int n)
+        {
+            Node<T> node = new Node<T>(data);
+            Node<T> current=head;
+            Node<T> prev = null;
+            Node<T> next = null;
+            int i = 0;
+            while (current != null)
+            {
+                if (i == n+1)
+                {
+                    next = current;
+                    prev.Next = node;
+                    node.Next = next;
+                    break;
+                }
+                else if(i==n)
+                {
+                    prev= current;
+                }
+                current = current.Next;
+                i++;
+            }
+           
         }
         // реализация интерфейса IEnumerable
         IEnumerator IEnumerable.GetEnumerator()

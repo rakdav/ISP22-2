@@ -25,6 +25,7 @@ namespace ISP22_2
         private List<double> doubles = new List<double>();  
         private Queue<double> queue= new Queue<double>();
         private Stack<Monitor> monitors = new Stack<Monitor>();
+        private OurList<int> ourList= new OurList<int>();
         public MainWindow()
         {
             InitializeComponent();
@@ -135,7 +136,26 @@ namespace ISP22_2
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
+            int n = int.Parse(txtLab8.Text);
+            ourList.Add(n);
+            list8.Items.Add(n);
+            txtLab8.Clear();
+            updateList8();
+        }
 
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            int n = ourList.IndexOf(10);
+            ourList.Insert(12, n);
+            updateList8();
+        }
+        private void updateList8()
+        {
+            list8.Items.Clear();
+            foreach(int i in ourList)
+            {
+                list8.Items.Add(i);
+            }
         }
     }
 }
