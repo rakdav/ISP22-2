@@ -162,12 +162,25 @@
             </TabControl>
         </TabItem>
         <TabItem Header="Лабораторная работа 8">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-            </Grid>
+            <TabControl>
+                <TabItem Header="Базовый уровень 23">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <ListBox  Grid.Column="0" Name="list8" Margin="10"/>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+            </TabControl>
         </TabItem>
     </TabControl>
 </Window>
